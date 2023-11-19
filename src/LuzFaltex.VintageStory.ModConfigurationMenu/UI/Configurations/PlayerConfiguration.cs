@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  PlayerConfiguration.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,18 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Provides a configuration that accepts a player, with autocomplete support.
     /// </summary>
-    public class Guilds : ModSystem
+    /// <param name="Name">The name of the option.</param>
+    /// <param name="Description">A description of the option.</param>
+    public sealed record class PlayerConfiguration(string Name, string? Description = null) : IConfiguration<IServerPlayer?>
     {
-        /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
-        /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
-
-        private List<IGuild> _guilds = new();
-
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-
-        }
+        /// <inheritdoc/>
+        public IServerPlayer? Value { get; set; } = null;
     }
 }

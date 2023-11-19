@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Vintagestory.API.Common;
+using Vintagestory.API.Server;
 
 namespace LuzFaltex.VintageStory.Guilds.Abstractions.Models
 {
@@ -41,7 +42,12 @@ namespace LuzFaltex.VintageStory.Guilds.Abstractions.Models
         /// <summary>
         /// Gets the owner of this guild.
         /// </summary>
-        public IPlayer Owner { get; }
+        public IServerPlayer Owner { get; }
+
+        /// <summary>
+        /// Gets the player who will inherit this guild if the owner becomes unavailable.
+        /// </summary>
+        public IServerPlayer Heir { get; }
 
         /// <summary>
         /// Gets the name of the guild.

@@ -8,4 +8,8 @@
     <PackageReference Include="Remora.Commands" Version="10.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Autocomplete\Providers\" />
+  </ItemGroup>
+
 </Project>

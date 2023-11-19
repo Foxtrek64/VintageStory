@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  Section.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -21,27 +21,22 @@
 //
 
 using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
 
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Represents a configuration section on a mod page.
     /// </summary>
-    public class Guilds : ModSystem
+    public sealed record class Section(string Name, string Description)
     {
-        /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
-        /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
+        public IReadOnlyList<IConfiguration> Configurations => _configurations.AsReadOnly();
 
-        private List<IGuild> _guilds = new();
+        private List<IConfiguration> _configurations = new();
 
-        public override void StartServerSide(ICoreServerAPI api)
+        public Section AddConfiguration<TConfiguration>(TConfiguration configuration)
+            where TConfiguration : IConfiguration
         {
-
+            _configurations.Add(configuration);
         }
     }
 }

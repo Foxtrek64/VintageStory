@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  ModConfigurationMenu.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,21 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Server;
 
-namespace LuzFaltex.VintageStory.Guilds
+[assembly: ModInfo("LuzFaltex.VintageStory.ModConfigurationMenu",
+                    Authors = new string[] { "Unknown" },
+                    Description = "This is a sample mod",
+                    Version = "1.0.0")]
+
+namespace LuzFaltex.VintageStory.ModConfigurationMenu
 {
-    /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
-    /// </summary>
-    public class Guilds : ModSystem
+    public class ModConfigurationMenu : ModSystem
     {
-        /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
-        /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
-
-        private List<IGuild> _guilds = new();
-
-        public override void StartServerSide(ICoreServerAPI api)
+        public override void StartClientSide(ICoreClientAPI api)
         {
-
+            
         }
     }
 }

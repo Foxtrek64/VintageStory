@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  IConfiguration.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,27 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
-
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Represents a basic configuration type.
     /// </summary>
-    public class Guilds : ModSystem
+    /// <typeparam name="TValue">The underlying type of the value.</typeparam>
+    public interface IConfiguration<TValue>
     {
         /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
+        /// Gets the name of the configuration option.
         /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
+        public string Name { get; }
 
-        private List<IGuild> _guilds = new();
+        /// <summary>
+        /// Gets an optional description of the configuration option.
+        /// </summary>
+        public string? Description { get; }
 
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-
-        }
+        /// <summary>
+        /// Gets the underlying value of the configuration option.
+        /// </summary>
+        public TValue Value { get; }
     }
 }

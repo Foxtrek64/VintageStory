@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  TextConfiguration.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,14 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
-
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Provides a configuration option that accepts text.
     /// </summary>
-    public class Guilds : ModSystem
+    public sealed record class TextConfiguration(string Name, string? Description = null) : IConfiguration<string?>
     {
-        /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
-        /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
-
-        private List<IGuild> _guilds = new();
-
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-
-        }
+        /// <inheritdoc/>
+        public string? Value { get; set; } = null;
     }
 }

@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.VintageStory.Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuzFaltex.VintageStory.PlaceholderAPI", "src\LuzFaltex.VintageStory.PlaceholderAPI\LuzFaltex.VintageStory.PlaceholderAPI.csproj", "{2065F01D-FEC9-4E17-84AD-075A7C042C39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.VintageStory.ModConfigurationMenu", "src\LuzFaltex.VintageStory.ModConfigurationMenu\LuzFaltex.VintageStory.ModConfigurationMenu.csproj", "{590B7841-F4AC-426E-A18D-0193D05B6E5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590B7841-F4AC-426E-A18D-0193D05B6E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590B7841-F4AC-426E-A18D-0193D05B6E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590B7841-F4AC-426E-A18D-0193D05B6E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590B7841-F4AC-426E-A18D-0193D05B6E5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{12AABB01-EB74-4180-97BA-A78C44941960} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 		{2065F01D-FEC9-4E17-84AD-075A7C042C39} = {7035BC77-16A3-45A9-854E-68871E0EB704}
+		{590B7841-F4AC-426E-A18D-0193D05B6E5A} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9376AFE0-8A58-4B8E-AFFB-21E4BFD8710C}

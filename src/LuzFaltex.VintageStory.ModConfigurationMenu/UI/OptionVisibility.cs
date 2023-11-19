@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  OptionVisibility.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,21 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
-
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Configures visibility for users who don't have permission to configure the option.
     /// </summary>
-    public class Guilds : ModSystem
+    public enum OptionVisibility
     {
         /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
+        /// The option is visible, but read-only.
         /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
+        Visible,
 
-        private List<IGuild> _guilds = new();
-
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-
-        }
+        /// <summary>
+        /// The option does not show at all.
+        /// </summary>
+        Collapsed
     }
 }

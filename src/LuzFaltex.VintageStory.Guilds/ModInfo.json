@@ -1,9 +1,9 @@
 {
   "type": "code",
   "modid": "LuzFaltex.VintageStory.Guilds",
-  "name": "Guilds",
+  "name": "Guilded Empire",
   "authors": [ "LuzFaltex Contributors" ],
-  "description": "Provides the ability to create and manage guilds or factions.",
+  "description": "Provides the ability to create and manage guilds and parties.",
   "version": "1.0.0",
   "requiredOnClient": false,
   "dependencies": {

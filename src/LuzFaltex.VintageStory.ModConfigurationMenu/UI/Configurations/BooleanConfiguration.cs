@@ -1,5 +1,5 @@
 ﻿//
-//  Guilds.cs
+//  BooleanConfiguration.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,28 +20,24 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
-using Vintagestory.API.Common;
-using Vintagestory.API.Server;
-
-namespace LuzFaltex.VintageStory.Guilds
+namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
 {
     /// <summary>
-    /// Provides a <see cref="ModSystem"/> for the Guilded Empire mod.
+    /// Provides an option that is a boolean configuration, that is, an option that accepts true/false or yes/no.
     /// </summary>
-    public class Guilds : ModSystem
+    public sealed record class BooleanConfiguration(string Name, string? Description = null) : IConfiguration<bool>
     {
+        /// <inheritdoc/>
+        public bool Value { get; set; }
+
         /// <summary>
-        /// Gets a readonly list of guilds managed by this system.
+        /// Gets or sets the text used for the truthy value.
         /// </summary>
-        public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
+        public string TrueText { get; set; } = "True";
 
-        private List<IGuild> _guilds = new();
-
-        public override void StartServerSide(ICoreServerAPI api)
-        {
-
-        }
+        /// <summary>
+        /// Gets or sets the string used for the falsy value.
+        /// </summary>
+        public string FalseText { get; set; } = "False";
     }
 }
