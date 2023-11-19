@@ -4,4 +4,8 @@
 		<LibraryFrameworks>net7.0;net8.0</LibraryFrameworks>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Folder Include="Commands\" />
+	</ItemGroup>
+
 </Project>

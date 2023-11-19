@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LuzFaltex.VintageStory.Guilds.Abstractions\LuzFaltex.VintageStory.Guilds.Abstractions.csproj" />
   </ItemGroup>
 

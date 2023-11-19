@@ -51,7 +51,7 @@ namespace LuzFaltex.VintageStory.ChatChannels
             var originalMessage = message;
 
             message = channelFormat.Replace("{Player}", sender.PlayerName).Replace("{Message}", originalMessage);
-            PlaceholderAPI.PerformReplacements(ref message);
+            PlaceholderAPI.PerformReplacements(ref message, sender, data);
             // End sample code
 
             if (channelId != 0)
