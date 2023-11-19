@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7035BC77-16A3-45A9-854E-68871E0EB704}"
@@ -22,7 +24,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuzFaltex.VintageStory.Chat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuzFaltex.VintageStory.Guilds", "src\LuzFaltex.VintageStory.Guilds\LuzFaltex.VintageStory.Guilds.csproj", "{2A03E521-5182-443B-B176-6D13E2396DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.VintageStory.Guilds.Abstractions", "src\LuzFaltex.VintageStory.Guilds.Abstractions\LuzFaltex.VintageStory.Guilds.Abstractions.csproj", "{12AABB01-EB74-4180-97BA-A78C44941960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuzFaltex.VintageStory.Guilds.Abstractions", "src\LuzFaltex.VintageStory.Guilds.Abstractions\LuzFaltex.VintageStory.Guilds.Abstractions.csproj", "{12AABB01-EB74-4180-97BA-A78C44941960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.VintageStory.CoreLib", "src\LuzFaltex.VintageStory.CoreLib\LuzFaltex.VintageStory.CoreLib.csproj", "{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuzFaltex.VintageStory.PlaceholderAPI", "src\LuzFaltex.VintageStory.PlaceholderAPI\LuzFaltex.VintageStory.PlaceholderAPI.csproj", "{2065F01D-FEC9-4E17-84AD-075A7C042C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +56,14 @@ Global
 		{12AABB01-EB74-4180-97BA-A78C44941960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12AABB01-EB74-4180-97BA-A78C44941960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12AABB01-EB74-4180-97BA-A78C44941960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2065F01D-FEC9-4E17-84AD-075A7C042C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +74,8 @@ Global
 		{67E8ACB9-C609-4DAC-9395-75F52C3C9426} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 		{2A03E521-5182-443B-B176-6D13E2396DB7} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 		{12AABB01-EB74-4180-97BA-A78C44941960} = {7035BC77-16A3-45A9-854E-68871E0EB704}
+		{F4CFFDDE-FA2F-406A-8213-0BD40EE7CBE5} = {7035BC77-16A3-45A9-854E-68871E0EB704}
+		{2065F01D-FEC9-4E17-84AD-075A7C042C39} = {7035BC77-16A3-45A9-854E-68871E0EB704}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9376AFE0-8A58-4B8E-AFFB-21E4BFD8710C}
