@@ -1,0 +1,12 @@
+{
+  "type": "code",
+  "modid": "LuzFaltex.VintageStory.Guilds",
+  "name": "Guilds",
+  "authors": [ "LuzFaltex Contributors" ],
+  "description": "Provides the ability to create and manage guilds or factions.",
+  "version": "1.0.0",
+  "requiredOnClient": false,
+  "dependencies": {
+    "game": "*"
+  }
+}

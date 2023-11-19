@@ -1,0 +1,29 @@
+<Project>
+	<PropertyGroup>
+		<LegalAuthor>LuzFaltex Contributors</LegalAuthor>
+		<LegalEmail>support@luzfaltes.com</LegalEmail>
+        <Company>LuzFaltex, LLC.</Company>
+		<LegalCopyrightHolder>LuzFaltex, LLC.</LegalCopyrightHolder>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<SolutionDir>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)/))</SolutionDir>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="VintagestoryAPI">
+			<HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+  <PropertyGroup>
+    <RepositoryBranch>main</RepositoryBranch>
+    <RepositoryUrl>https://github.com/ravenrockrp/LuzFaltex.VintageStory</RepositoryUrl>
+
+    <PackageProjectUrl>https://github.com/ravenrockrp/LuzFaltex.VintageStory</PackageProjectUrl>
+    <PackageOutputPath>$(SolutionDir)/nuget</PackageOutputPath>
+    <PackageTags>LuzFaltex;VintageStory</PackageTags>
+  </PropertyGroup>
+
+</Project>

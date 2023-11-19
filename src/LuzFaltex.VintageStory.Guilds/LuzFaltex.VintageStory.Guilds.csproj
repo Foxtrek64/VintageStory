@@ -1,0 +1,23 @@
+﻿<Project Sdk="Remora.Sdk">
+
+  <PropertyGroup>
+    <LibraryFrameworks>net7.0;net8.0</LibraryFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Models\Guild.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ModInfo.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LuzFaltex.VintageStory.Guilds.Abstractions\LuzFaltex.VintageStory.Guilds.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

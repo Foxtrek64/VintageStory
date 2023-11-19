@@ -1,0 +1,11 @@
+<Project Sdk="Remora.Sdk">
+
+  <PropertyGroup>
+    <LibraryFrameworks>net7.0;net8.0</LibraryFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Remora.Commands" Version="10.0.4" />
+  </ItemGroup>
+
+</Project>
