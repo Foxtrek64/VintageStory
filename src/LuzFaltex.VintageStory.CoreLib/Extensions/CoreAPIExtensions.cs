@@ -38,8 +38,7 @@ namespace LuzFaltex.VintageStory.CoreLib.Extensions
         /// <returns>A <see cref="ProviderLibrary"/> instance which tracks available providers.</returns>
         public static ProviderLibrary GetProviderLibrary(this ICoreServerAPI api)
         {
-            CoreLib coreLib = (api.ModLoader.GetModSystem(typeof(CoreLib).FullName) as CoreLib)!;
-            return coreLib.ProviderLibrary;
+            return api.ModLoader.GetModSystem<CoreLib>().ProviderLibrary;
         }
     }
 }

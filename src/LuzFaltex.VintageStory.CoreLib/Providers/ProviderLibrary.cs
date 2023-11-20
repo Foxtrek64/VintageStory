@@ -21,11 +21,6 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 
 namespace LuzFaltex.VintageStory.CoreLib.Providers
@@ -36,13 +31,8 @@ namespace LuzFaltex.VintageStory.CoreLib.Providers
     public sealed class ProviderLibrary : EntityProperties
     {
         /// <summary>
-        /// Gets an enconomy provider.
+        /// Gets the current economy provider, or null if none is provided.
         /// </summary>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public IEconomyProvider GetEconomyProvider()
-        {
-            throw new NotImplementedException();
-        }
+        public IEconomyProvider? EconomyProvider { get; init; }
     }
 }

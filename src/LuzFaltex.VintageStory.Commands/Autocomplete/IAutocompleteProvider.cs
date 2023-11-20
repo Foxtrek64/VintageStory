@@ -63,11 +63,13 @@ namespace LuzFaltex.VintageStory.Commands.Autocomplete
         /// <param name="userInput">The user's current input.</param>
         /// <param name="cancellationToken">The cancellation token for this operation.</param>
         /// <returns>The suggested options.</returns>
+        /*
         ValueTask<IReadOnlyList<IApplicationCommandOptionChoice>> GetSuggestionsAsync
         (
             IReadOnlyList<IApplicationCommandInteractionDataOption> options,
             string userInput,
             CancellationToken cancellationToken = default
         );
+        */
     }
 }

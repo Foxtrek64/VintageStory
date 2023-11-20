@@ -21,14 +21,22 @@
 //
 
 using System;
+using System.Collections.Generic;
 using LuzFaltex.VintageStory.Guilds.Abstractions.Models;
 using Vintagestory.API.Common;
+using Vintagestory.API.Server;
 
 namespace LuzFaltex.VintageStory.Guilds
 {
+    /// <summary>
+    /// Provides a concrete model for a Guild.
+    /// </summary>
+    /// <param name="Owner">The creator/owner of the guild.</param>
+    /// <param name="Name">The display name of the guild.</param>
     public sealed record class Guild
     (
-        IPlayer Owner
+        IServerPlayer Owner,
+        string Name
     )
         : IGuild
     {
@@ -36,6 +44,59 @@ namespace LuzFaltex.VintageStory.Guilds
         public Guid Id { get; } = Guid.NewGuid();
 
         /// <inheritdoc/>
-        public IPlayer Owner { get; init; } = Owner;
+        public IServerPlayer Owner { get; private set; } = Owner;
+
+        /// <inheritdoc/>
+        public string Name { get; private set; } = Name;
+
+        /// <inheritdoc/>
+        public IServerPlayer? Heir { get; set; }
+
+        /// <inheritdoc/>
+        public IReadOnlyList<IServerPlayer> Members => _players.AsReadOnly();
+
+        private readonly List<IServerPlayer> _players = new();
+
+        /// <inheritdoc/>
+        public bool IsTaxationEnabled
+        {
+            get
+            {
+                // This is determined by three factors:
+                // 1. Does CoreLib report that an economy mod is present?
+                // 2. Is taxation enabled globally?
+                // 3. Is taxation enabled in the guild?
+                return false;
+
+                // TODO: Update logic
+            }
+        }
+
+        /// <summary>
+        /// Sets the assigned heir.
+        /// </summary>
+        /// <param name="heir">The server player to assign.</param>
+        public void SetHeir(IServerPlayer heir)
+        {
+            Heir = heir;
+        }
+
+        /// <summary>
+        /// Specifies a new player to be the owner of the guild.
+        /// </summary>
+        /// <param name="owner">The new owner.</param>
+        public void TransferOwnership(IServerPlayer owner)
+        {
+            Owner = owner;
+        }
+
+        /// <summary>
+        /// Changes the name of the guild.
+        /// </summary>
+        /// <param name="name">The new name.</param>
+        public void ChangeName(string name)
+        {
+            Name = name;
+        }
     }
 }

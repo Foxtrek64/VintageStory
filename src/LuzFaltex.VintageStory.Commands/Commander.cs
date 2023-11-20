@@ -20,15 +20,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 
 namespace LuzFaltex.VintageStory.Commands
 {
+    /// <summary>
+    /// The <see cref="ModSystem"/> for the Commander mod.
+    /// </summary>
     public sealed class Commander : ModSystem
     {
     }

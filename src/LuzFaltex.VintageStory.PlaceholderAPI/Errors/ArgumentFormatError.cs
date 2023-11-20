@@ -1,5 +1,5 @@
 ﻿//
-//  PlaceholderAPI.cs
+//  ArgumentFormatError.cs
 //
 //  Author:
 //       LuzFaltex Contributors <support@luzfaltes.com>
@@ -20,26 +20,19 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using Vintagestory.API.Common;
+using System;
+using JetBrains.Annotations;
+using Remora.Results;
 
-/*
-[assembly: ModInfo("LuzFaltex.VintageStory.PlaceholderAPI",
-                    Authors = new string[] { "Unknown" },
-                    Description = "This is a sample mod",
-                    Version = "1.0.0")]
-*/
-
-namespace LuzFaltex.VintageStory.PlaceholderAPI
+namespace LuzFaltex.VintageStory.PlaceholderAPI.Errors
 {
     /// <summary>
-    /// A recreation of the PlaceholderAPI plugin from Minecraft.
+    /// An error which arises from an invalid format.
     /// </summary>
-    /// <seealso href="https://github.com/PlaceholderAPI/PlaceholderAPI"/>
-    public class PlaceholderAPI : ModSystem
-    {
-        /// <summary>
-        /// Gets the placeholder helper.
-        /// </summary>
-        public PlaceholderLib PlaceholderLib { get; } = new PlaceholderLib();
-    }
+    /// <remarks>
+    /// Use in place of <see cref="FormatException"/>.
+    /// </remarks>
+    /// <param name="Name">The name of the argument.</param>
+    /// <param name="Message">The error message.</param>
+    public sealed record class ArgumentFormatError([InvokerParameterName] string Name, string Message) : ArgumentError(Name, Message);
 }

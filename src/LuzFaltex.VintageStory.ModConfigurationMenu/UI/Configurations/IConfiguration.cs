@@ -20,13 +20,36 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+#pragma warning disable SA1402
+
+using System;
+using Remora.Results;
+
 namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
 {
     /// <summary>
     /// Represents a basic configuration type.
     /// </summary>
     /// <typeparam name="TValue">The underlying type of the value.</typeparam>
-    public interface IConfiguration<TValue>
+    public interface IConfiguration<TValue> : IConfiguration
+    {
+        /// <summary>
+        /// Gets the underlying value of the configuration option.
+        /// </summary>
+        public TValue Value { get; }
+
+        /// <summary>
+        /// Sets the function which will handle updating the value.
+        /// </summary>
+        /// <param name="updateFunction">The function which will update the option in the mod configuration.</param>
+        /// <returns>The current configuration, for chaining.</returns>
+        public IConfiguration<TValue> HandleWith(Func<TValue, Result> updateFunction);
+    }
+
+    /// <summary>
+    /// Represents a basic configuration type.
+    /// </summary>
+    public interface IConfiguration
     {
         /// <summary>
         /// Gets the name of the configuration option.
@@ -39,8 +62,8 @@ namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations
         public string? Description { get; }
 
         /// <summary>
-        /// Gets the underlying value of the configuration option.
+        /// Gets the permission node required to edit this item.
         /// </summary>
-        public TValue Value { get; }
+        public string Permission { get; }
     }
 }

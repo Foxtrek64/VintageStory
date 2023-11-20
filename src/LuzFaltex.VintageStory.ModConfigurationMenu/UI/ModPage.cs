@@ -22,9 +22,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Vintagestory.API.Common;
 
@@ -58,8 +55,37 @@ namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI
         /// </summary>
         public bool HideEmptySections { get; set; }
 
-        public IReadOnlyList<Section>
+        /// <summary>
+        /// Gets a list of sections in this <see cref="ModPage{TModSystem}"/>.
+        /// </summary>
+        public IReadOnlyList<Section> Sections => _sections.AsReadOnly();
 
-        public ModPage<TModSystem> 
+        private readonly List<Section> _sections = new();
+
+        /// <summary>
+        /// Sets the mod category.
+        /// </summary>
+        /// <param name="category">The category.</param>
+        /// <returns>The current <see cref="ModPage{TModSystem}"/> for chaining.</returns>
+        public ModPage<TModSystem> WithCategory(string category)
+        {
+            Category = category;
+            return this;
+        }
+
+        /// <summary>
+        /// Creates a new section and adds it to the ModPage.
+        /// </summary>
+        /// <param name="name">The name of the section.</param>
+        /// <param name="description">An optional section description.</param>
+        /// <param name="sectionConfiguration">An action which allows for configuration of the section, such as adding configuration options.</param>
+        /// <returns>The current mod page, for chaining.</returns>
+        public ModPage<TModSystem> CreateSection(string name, string? description = null, Action<Section>? sectionConfiguration = null)
+        {
+            var section = new Section(name, description);
+            sectionConfiguration?.Invoke(section);
+            _sections.Add(section);
+            return this;
+        }
     }
 }

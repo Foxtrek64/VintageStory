@@ -37,11 +37,11 @@ namespace LuzFaltex.VintageStory.Guilds
         /// </summary>
         public IReadOnlyList<IGuild> ManagedGuilds => _guilds.AsReadOnly();
 
-        private List<IGuild> _guilds = new();
+        private readonly List<IGuild> _guilds = new();
 
+        /// <inheritdoc/>
         public override void StartServerSide(ICoreServerAPI api)
         {
-
         }
     }
 }

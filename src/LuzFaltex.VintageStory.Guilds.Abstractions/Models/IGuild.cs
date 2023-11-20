@@ -47,7 +47,7 @@ namespace LuzFaltex.VintageStory.Guilds.Abstractions.Models
         /// <summary>
         /// Gets the player who will inherit this guild if the owner becomes unavailable.
         /// </summary>
-        public IServerPlayer Heir { get; }
+        public IServerPlayer? Heir { get; }
 
         /// <summary>
         /// Gets the name of the guild.
@@ -57,7 +57,7 @@ namespace LuzFaltex.VintageStory.Guilds.Abstractions.Models
         /// <summary>
         /// Gets a list of players who are members of the guild.
         /// </summary>
-        public IReadOnlyList<IPlayer> Members { get; }
+        public IReadOnlyList<IServerPlayer> Members { get; }
 
         /// <summary>
         /// Gets a value indicating whether taxation is enabled in the guild.

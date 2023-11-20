@@ -23,18 +23,23 @@
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 
+/*
 [assembly: ModInfo("LuzFaltex.VintageStory.ModConfigurationMenu",
                     Authors = new string[] { "Unknown" },
                     Description = "This is a sample mod",
                     Version = "1.0.0")]
+*/
 
 namespace LuzFaltex.VintageStory.ModConfigurationMenu
 {
+    /// <summary>
+    /// The <see cref="ModSystem"/> for the Mod Configuration Menu plugin.
+    /// </summary>
     public class ModConfigurationMenu : ModSystem
     {
+        /// <inheritdoc/>
         public override void StartClientSide(ICoreClientAPI api)
         {
-            
         }
     }
 }

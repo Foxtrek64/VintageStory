@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using System;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 
@@ -37,7 +38,7 @@ namespace LuzFaltex.VintageStory.Commands
         /// <returns>The current <see cref="ICoreServerAPI"/> for chaining.</returns>
         public static ICoreServerAPI AddCommands(this ICoreServerAPI api)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

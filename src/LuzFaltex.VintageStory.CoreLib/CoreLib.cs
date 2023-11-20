@@ -26,10 +26,12 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Server;
 
+/*
 [assembly: ModInfo("LuzFaltex.VintageStory.CoreLib",
                     Authors = new string[] { "Unknown" },
                     Description = "This is a sample mod",
                     Version = "1.0.0")]
+*/
 
 namespace LuzFaltex.VintageStory.CoreLib
 {

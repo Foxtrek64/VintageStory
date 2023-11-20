@@ -21,22 +21,76 @@
 //
 
 using System.Collections.Generic;
+using LuzFaltex.VintageStory.ModConfigurationMenu.UI.Configurations;
 
 namespace LuzFaltex.VintageStory.ModConfigurationMenu.UI
 {
     /// <summary>
     /// Represents a configuration section on a mod page.
     /// </summary>
-    public sealed record class Section(string Name, string Description)
+    public sealed record class Section
     {
+        /// <summary>
+        /// Gets the name of this section.
+        /// </summary>
+        public string Name { get; internal set; }
+
+        /// <summary>
+        /// Gets the description of this section.
+        /// </summary>
+        public string? Description { get; internal set; }
+
+        /// <summary>
+        /// Gets a collection of configuration options in this section.
+        /// </summary>
         public IReadOnlyList<IConfiguration> Configurations => _configurations.AsReadOnly();
 
-        private List<IConfiguration> _configurations = new();
+        private readonly List<IConfiguration> _configurations = new();
 
-        public Section AddConfiguration<TConfiguration>(TConfiguration configuration)
-            where TConfiguration : IConfiguration
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Section"/> class.
+        /// </summary>
+        /// <param name="name">The name of the section.</param>
+        /// <param name="description">The description of the section.</param>
+        public Section(string name, string? description)
         {
-            _configurations.Add(configuration);
+            Name = name;
+            Description = description;
+        }
+
+        /// <summary>
+        /// Adds a configuration item to this section.
+        /// </summary>
+        /// <typeparam name="TResult">The return type of the configuration item.</typeparam>
+        /// <param name="buildConfiguration">An operation to create and build the configuration item.</param>
+        /// <returns>The current section, for chaining.</returns>
+        public Section AddConfiguration<TResult>(System.Func<IConfiguration<TResult>> buildConfiguration)
+        {
+            var config = buildConfiguration();
+            _configurations.Add(config);
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the name of this section.
+        /// </summary>
+        /// <param name="name">The section name.</param>
+        /// <returns>The current <see cref="Section"/> for chaining.</returns>
+        public Section WithName(string name)
+        {
+            Name = name;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the description of this section.
+        /// </summary>
+        /// <param name="description">The description.</param>
+        /// <returns>The current <see cref="Section"/> for chaining.</returns>
+        public Section WithDescription(string description)
+        {
+            Description = description;
+            return this;
         }
     }
 }
